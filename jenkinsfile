@@ -8,14 +8,15 @@ pipeline {
     agent any
     stages { 
         stage('checkout') {
-                steps {
-                  echo "node version: "
-                  sh 'node -v'
-                  
-                }
+          steps {
+            echo "node version: "
+            sh 'node -v'     
+         }
         }
         stage ('build'){
-          sh 'npm ci'
+          steps {
+            sh 'npm ci'
+          }
         }
     }
     post{
