@@ -7,12 +7,12 @@ pipeline {
     // }
     agent any
     stages { 
-        stage('checkout') {
-          steps {
-            echo "node version: "
-            sh 'node -v'     
-         }
-        }
+        // stage('checkout') {
+        //   steps {
+        //     echo "node version: "
+        //     sh 'node -v'     
+        //  }
+        // }
         stage ('build'){
           steps {
             sh 'npm ci'
