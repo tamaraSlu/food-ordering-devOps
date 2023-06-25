@@ -1,0 +1,53 @@
+version: "3.9"
+services:
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    privileged: true
+    user: root
+    ports:
+      - 8080:8080
+    container_name: jenkins-lts
+    volumes:
+      - jenkins_home:/var/jenkins_home
+    networks:
+      - app-network
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: dockerfile
+    ports:
+    - "3000:3000"
+    depends_on:
+      - backend
+    container_name: frontend
+    networks:
+      - app-network
+  database:
+    image: mongo
+    ports:
+      - "27017:27017"
+    restart: on-failure
+    container_name: mongodb
+    volumes:
+      - "/usr/todo_app_mongodb:/data/db"
+    networks:
+      - app-network
+  
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+    container_name: backend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+volumes:
+  jenkins_home:
