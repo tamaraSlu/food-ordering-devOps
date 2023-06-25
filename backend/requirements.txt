@@ -1,0 +1,11 @@
+fastapi
+pylint
+awkward
+uvicorn
+httptools==0.1.*
+pydantic
+uvicorn[standard]
+mysql
+mysql.connector
+requests
+pymongo[snappy,gssapi,srv,tls]
