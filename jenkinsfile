@@ -1,27 +1,30 @@
-def img
 pipeline {
-    environment {
-        registry = "TAI/food-ordering" //To push an image to Docker Hub, you must first name your local image using your Docker Hub username and the repository name that you created through Docker Hub on the web.
-        registryCredential = '5be594b0-abac-40b1-ab8f-da78616e4744'
-        githubCredential = 'fc1e66f4-2807-4491-9a96-9deec3bffe99'
-        dockerImage = ''
-    }
+    // environment {
+    //     registry = "TAI/food-ordering" //To push an image to Docker Hub, you must first name your local image using your Docker Hub username and the repository name that you created through Docker Hub on the web.
+    //     registryCredential = '5be594b0-abac-40b1-ab8f-da78616e4744'
+    //     githubCredential = 'fc1e66f4-2807-4491-9a96-9deec3bffe99'
+    //     dockerImage = ''
+    // }
     agent any
-    stages {
-        
+    stages { 
         stage('checkout') {
                 steps {
-                git branch: 'master',
-                credentialsId: githubCredential,
-                url: 'https://github.com/EASS-HIT-PART-A-2022-CLASS-II/food-ordering/'
+                  echo "node version: "
+                  sh 'node -v'
+                  
                 }
         }
-        
-        stage ('Test'){
-                steps {
-                sh "pytest test.py"
-                }
+        stage ('build'){
+          sh 'npm ci'
         }
-
+    }
+    post{
+      always{
+        echo "pipeline ended"
+      }
+      success{
+        echo "pipeline ended successfully"
       }
     }
+    
+}

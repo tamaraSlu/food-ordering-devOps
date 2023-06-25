@@ -7,7 +7,7 @@ services:
     user: root
     ports:
       - 8080:8080
-    container_name: jenkins-lts
+    container_name: jenkins-container
     volumes:
       - jenkins_home:/var/jenkins_home
     networks:
@@ -20,7 +20,7 @@ services:
     - "3000:3000"
     depends_on:
       - backend
-    container_name: frontend
+    container_name: frontend-container
     networks:
       - app-network
   database:
@@ -28,7 +28,7 @@ services:
     ports:
       - "27017:27017"
     restart: on-failure
-    container_name: mongodb
+    container_name: mongoDB
     volumes:
       - "/usr/todo_app_mongodb:/data/db"
     networks:
@@ -42,7 +42,7 @@ services:
       - "8000:8000"
     depends_on:
       - database
-    container_name: backend
+    container_name: backend-container
     networks:
       - app-network
 
