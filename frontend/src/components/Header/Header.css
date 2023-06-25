@@ -1,0 +1,12 @@
+.Header {
+    background-color: #009688;
+    display: flex;
+    min-height: 10vh;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .Title{
+    text-shadow:1px 1px 5px #000000;
+    color: whitesmoke;
+    align-self:center;
+  }

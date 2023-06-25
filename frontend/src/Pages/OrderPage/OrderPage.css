@@ -1,0 +1,17 @@
+.body-container {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    flex-direction: column;
+}
+
+.body-header {
+    color: #009688;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    margin-bottom: 20px;
+}
