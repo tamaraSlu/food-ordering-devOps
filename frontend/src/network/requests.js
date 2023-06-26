@@ -3,7 +3,6 @@ import axios from "axios"
 export const getInitialData=async ()=>{
     return await (await axios.get("http://127.0.0.1:8000")).data;
 }
-// lol
 export const getRestaurantsByType=async (type)=>{
     return await (await axios.get(`http://127.0.0.1:8000/restaurants/get-by-type?restaurant_type=${type}`)).data;
 }

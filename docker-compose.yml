@@ -9,7 +9,7 @@ services:
       - 8080:8080
     container_name: jenkins-container
     volumes:
-      - jenkins_home:/var/jenkins_home
+      - ~/jenkins_home:/var/jenkins_home
   #   networks:
   #     - app-network
   frontend:
