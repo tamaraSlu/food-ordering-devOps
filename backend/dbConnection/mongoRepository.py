@@ -2,7 +2,7 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 # "mongodb+srv://clusterfoodordering.vbb1tnt.mongodb.net/?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority
-conn_str = "mongodb+srv://food-ordering-backend:LUrb0oCWj73XGUD1@clusterfoodordering.vbb1tnt.mongodb.net/?retryWrites=true&w=majority"
+conn_str = "mongodb+srv://food-ordering-devOps:LUrb0oCWj73XGUD1@clusterfoodordering.vbb1tnt.mongodb.net/?retryWrites=true&w=majority"
 
 
 # conn_str = "mongodb+srv://food-ordering-devOps:a5f7f9f7-4be9-49af-8bc2-c8546d1926d3@clusterfoodordering.vbb1tnt.mongodb.net/?retryWrites=true&w=majority"
