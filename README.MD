@@ -26,7 +26,7 @@ uvicorn backend.main:app --reload
 ```
 npm run start
 ```
-### Docker run
+### Docker run separately
 ```
 cd path-to-project/backend
 docker build -t backend
@@ -36,6 +36,12 @@ docker run -d -p 8000:8000 backend
 cd path-to-project/frontend
 docker build -t frontend
 docker run -d -p 3000:3000 frontend
+```
+
+### Docker compose run 
+```
+cd path-to-project/frontend
+docker compose up -d
 ```
 
 after docker run/ local run open new tab with the URL: http://localhost:3000/
