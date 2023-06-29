@@ -40,7 +40,7 @@ docker run -d -p 3000:3000 frontend
 
 ### Docker compose run 
 ```
-cd path-to-project/frontend
+cd path-to-project
 docker compose up -d
 ```
 
