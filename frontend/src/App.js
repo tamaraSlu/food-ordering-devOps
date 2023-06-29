@@ -15,9 +15,6 @@ function App() {
   const [searchFilter,setSearchFilter]=useState({id:0,value:0});
   const [searchResults,setSearchResults]=useState(null);
   const [orderFrom,setOrderFrom]=useState(null);
-
-  //this is for new commit
-
   const requestForInitData = async () => {
     const res = await getInitialData();
     setInitialData(res)
