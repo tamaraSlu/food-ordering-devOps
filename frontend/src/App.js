@@ -20,6 +20,8 @@ function App() {
     setInitialData(res)
   }
 
+  //This is for new commit
+
   const requestRestaurantsByType = async (type) => {
     const res = await getRestaurantsByType(type);
     setSearchResults(res);
